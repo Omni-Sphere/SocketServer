@@ -1,0 +1,37 @@
+{
+  "name": "calendar-websocket-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for calendar events using TypeScript, SQL, OOP, and DDD.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only index.ts"
+  },
+  "keywords": [
+    "typescript",
+    "websocket",
+    "sql",
+    "calendar",
+    "ddd",
+    "oop"
+  ],
+  "author": "Abraham David Rodriguez Martinez",
+  "license": "MIT",
+  "dependencies": {
+    "calendar-websocket-server": "file:",
+    "dotenv": "^16.5.0",
+    "mssql": "^11.0.1",
+    "tedious": "^10.0.0",
+    "ws": "^8.15.1"
+  },
+  "devDependencies": {
+    "@types/mssql": "^9.1.7",
+    "@types/node": "^20.17.50",
+    "@types/tedious": "^4.0.14",
+    "@types/ws": "^8.18.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
