@@ -1,6 +1,6 @@
 import { WebSocketServer as WSServer, WebSocket } from 'ws';
 import { CalendarEvent } from '../Types/CalendarEvent';
-import { CalendarEventService } from '../Services/ClendarEventService';
+import { CalendarEventController } from '../Controllers/CalendarEventController';
 
 interface WSMessage {
   action: string;
@@ -18,11 +18,11 @@ interface WSResponse {
 
 export default class SocketServer {
   private wss: WSServer;
-  private service: CalendarEventService;
+  private service: CalendarEventController;
 
   constructor(private port: number) {
     this.wss = new WSServer({ port: this.port });
-    this.service = new CalendarEventService();
+    this.service = new CalendarEventController();
   }
 
   private broadcastChangeExcept(sender: WebSocket, action: string, data: any): void {
@@ -30,7 +30,7 @@ export default class SocketServer {
     const messageStr = JSON.stringify(message);
 
     this.wss.clients.forEach(client => {
-        client.send(messageStr);
+      client.send(messageStr);
     });
   }
 
@@ -83,11 +83,11 @@ export default class SocketServer {
                 status: 'ok',
                 data: events,
                 requestId,
-              }));   
+              }));
               break;
 
             case 'update':
-              if (!data) 
+              if (!data)
                 throw new Error('Missing data for update');
 
               await this.service.update(data as CalendarEvent);

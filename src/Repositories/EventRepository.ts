@@ -66,7 +66,7 @@ export default class EventRepository {
     await Database.executePreparedNonQuery(
       `
       INSERT INTO CalendarEvents (EventEntry, EventStartDate, EventEndDate, ConsultantEntry, EventType)
-      VALUES (( SELECT ISNULL(COUNT(*),0) + 1 FROM CalendarEvents ), @EventStartDate, @EventEndDate, @Consultant, @EventType)
+      VALUES (( SELECT ISNULL(MAX([EventEntry]),0) + 1 FROM CalendarEvents ), @EventStartDate, @EventEndDate, @Consultant, @EventType)
     `,
       {
         EventStartDate: sql.VarChar,

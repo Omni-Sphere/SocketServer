@@ -1,7 +1,7 @@
 import { CalendarEvent } from '../Types/CalendarEvent'; 
 import EventRepository from '../Repositories/EventRepository';
 
-export class CalendarEventService {
+export class CalendarEventController {
   private repository: EventRepository;
 
   constructor() {
