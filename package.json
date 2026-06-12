@@ -20,14 +20,21 @@
   "license": "MIT",
   "dependencies": {
     "calendar-websocket-server": "file:",
+    "cors": "^2.8.6",
     "dotenv": "^16.5.0",
+    "express": "^5.2.1",
+    "graphql": "^16.13.2",
+    "graphql-http": "^1.22.4",
     "mssql": "^11.0.1",
     "tedious": "^10.0.0",
     "ws": "^8.15.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/mssql": "^9.1.7",
     "@types/node": "^20.17.50",
+    "@types/pg": "^8.20.0",
     "@types/tedious": "^4.0.14",
     "@types/ws": "^8.18.1",
     "ts-node": "^10.9.2",

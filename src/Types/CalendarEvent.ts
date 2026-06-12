@@ -3,11 +3,15 @@ export type Consultant = {
     ConsultantName?: string;
   };
   
+  export type EventType = {
+    Code: string;
+    Name: string;
+  };
+
   export type CalendarEvent = {
     EventEntry?: number;
     EventStartDate: string;
     EventEndDate: string;
     Consultant: Consultant;
-    EventType: 'C' | 'G' | 'D' | 'S' | 'T';
+    EventType: EventType;
   };
-  
